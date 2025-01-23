@@ -1,0 +1,40 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <!-- Sección del panel del perfil -->
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white text-center">
+                    <h2>Mi Perfil</h2>
+                </div>
+                <div class="card-body">
+                    <div class="text-center mb-4">
+                        <img src="{{ user.profile.profile_image.url }}" alt="Foto de perfil"
+                            class="rounded-circle img-thumbnail" width="150" height="150">
+                    </div>
+                    <h4 class="text-center">{{ user.username }}</h4>
+                    <p class="text-muted text-center">Rol: {{ user.role|default:"Usuario" }}</p>
+                    <hr>
+                    <div class="mb-3">
+                        <strong>Email:</strong>
+                        <p>{{ user.email }}</p>
+                    </div>
+                    <div class="mb-3">
+                        <strong>Fecha de registro:</strong>
+                        <p>{{ user.date_joined|date:"d/m/Y" }}</p>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="{% url 'home' %}" class="btn btn-secondary">Volver al Inicio</a>
+                        {% if user.is_authenticated and user.role == 'admin' %}
+                        <a href="{% url 'admin_register' %}" class="btn btn-primary">Registrar nuevo usuario</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

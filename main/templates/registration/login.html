@@ -1,0 +1,37 @@
+
+
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 85vh; background-color: #f7f7f7;">
+    <div class="row shadow-lg bg-white rounded" style="max-width: 900px; width: 100%;">
+        <div class="col-md-6 d-none d-md-block p-0">
+            <img src="{% static 'images/login-image.jpg' %}" alt="Login Image" class="img-fluid rounded-start" style="height: 100%; object-fit: cover;">
+        </div>
+        <div class="col-md-6 p-5">
+            <div class="text-center mb-4">
+                <img src="{% static 'images/logo.jpg' %}" alt="Logo" class="mb-3" style="width: 60px;">
+                <h3 class="fw-bold">Iniciar Sesión</h3>
+            </div>
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="id_username" class="form-label">Usuario</label>
+                    <input type="text" class="form-control" id="id_username" name="username" required>
+                </div>
+                <div class="mb-4">
+                    <label for="id_password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="id_password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-dark w-100">Iniciar Sesión</button>
+            </form>
+            <div class="text-center mt-3">
+                <a href="#" class="text-decoration-none">¿Olvidaste tu contraseña?</a><br>
+                <small>¿No tienes una cuenta? <a href="{% url 'user_register' %}" class="text-decoration-none">Regístrate aquí</a></small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

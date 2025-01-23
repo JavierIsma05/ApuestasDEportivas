@@ -1,0 +1,115 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{% load static %}
+
+
+<!-- Header -->
+<header class="bg-primary text-white text-center py-5">
+    <div class="container">
+        <h1>Bienvenidos JavishBet Sports</h1>
+        <p class="lead">Descubre lo último en noticias deportivas, eventos y plataformas de apuestas.</p>
+    </div>
+</header>
+
+<!-- Noticias Section -->
+<section id="noticias" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Noticias</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'images/noticia.jpg' %}" class="card-img-top" alt="Noticia 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Título de Noticia 1</h5>
+                        <p class="card-text">Resumen de la noticia número 1.</p>
+                        <a href="#" class="btn btn-primary">Leer más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'images/noticia.jpg' %}" class="card-img-top" alt="Noticia 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Título de Noticia 2</h5>
+                        <p class="card-text">Resumen de la noticia número 2.</p>
+                        <a href="#" class="btn btn-primary">Leer más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'images/noticia.jpg' %}" class="card-img-top" alt="Noticia 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Título de Noticia 3</h5>
+                        <p class="card-text">Resumen de la noticia número 3.</p>
+                        <a href="#" class="btn btn-primary">Leer más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Eventos Deportivos Section -->
+<section id="eventos" class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Eventos Deportivos</h2>
+        <div id="eventosCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'images/n1.jpg' %}" class="d-block w-100" alt="Evento 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Evento Deportivo 1</h5>
+                        <p>Detalles del evento deportivo 1.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/n2.jpg' %}" class="d-block w-100" alt="Evento 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Evento Deportivo 2</h5>
+                        <p>Detalles del evento deportivo 2.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/n3.jpg' %}" class="d-block w-100" alt="Evento 3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Evento Deportivo 3</h5>
+                        <p>Detalles del evento deportivo 3.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#eventosCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#eventosCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Apuestas Section -->
+<section id="apuestas" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Apuestas</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <a href="https://www.ecuabet.com" target="_blank" class="btn btn-outline-primary w-100 py-3">Ecuabet</a>
+            </div>
+            <div class="col-md-4">
+                <a href="https://www.betano.com" target="_blank" class="btn btn-outline-success w-100 py-3">Betano</a>
+            </div>
+            <div class="col-md-4">
+                <a href="https://www.coolbet.com" target="_blank" class="btn btn-outline-danger w-100 py-3">Coolbet</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2025 Deportes & Apuestas. Todos los derechos reservados.</p>
+</footer>
+{% endblock %}
