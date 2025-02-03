@@ -9,7 +9,9 @@ class CustomUser(AbstractUser):
         ('editor', 'Editor'),
     ]
     role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='user')
-
+    pregunta_secreta = models.CharField(max_length=255, blank=True, null=True)
+    respuesta_secreta = models.CharField(max_length=255, blank=True, null=True)
+    
     def __str__(self):
         return f"{self.username} ({self.get_role_display()})"
     

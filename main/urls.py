@@ -18,4 +18,10 @@ urlpatterns = [
     # Ruta para administradores
     path('admin-register/', views.admin_register, name='admin_register'),
 
+    # Ruta para ver usuarios listados
+    path("usuarios/", views.lista_usuarios, name="lista_usuarios"),
+
+    #Ruta para recuperar claves
+    path("recuperar-clave/", views.recuperar_clave, name="recuperar_clave"),
+
 ]

@@ -27,7 +27,7 @@
                 <button type="submit" class="btn btn-dark w-100">Iniciar Sesión</button>
             </form>
             <div class="text-center mt-3">
-                <a href="#" class="text-decoration-none">¿Olvidaste tu contraseña?</a><br>
+                <a href="{% url 'recuperar_clave' %}" class="text-decoration-none">¿Olvidaste tu contraseña?</a><br>
                 <small>¿No tienes una cuenta? <a href="{% url 'user_register' %}" class="text-decoration-none">Regístrate aquí</a></small>
             </div>
         </div>

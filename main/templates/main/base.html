@@ -20,8 +20,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">Perfil</a></li>
-
+                    
                     {% if user.is_authenticated and user.role == 'admin' %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'editions' %}">Ediciones</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'creation' %}">Creación</a></li>
@@ -33,12 +32,23 @@
                 </ul>
                 <ul class="navbar-nav">
                     {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <form method="post" action="{% url 'logout' %}" class="d-inline">
-                            {% csrf_token %}
-                            <button type="submit" class="btn btn-outline-light">Cerrar Sesión</button>
-                        </form>
-                    </li>
+                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="perfilDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="data:image/png;base64,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" alt="Perfil" class="rounded-circle me-2" width="40" height="40">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilDropdown">
+                        <li><a class="dropdown-item" href="{% url 'profile' %}">Mi perfil</a></li>
+                        <li><a class="dropdown-item" href="#">Configuración</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li class="nav-item">
+                            <form method="post" action="{% url 'logout' %}" class="d-inline">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn">Cerrar Sesión</button>
+                                
+                            </form>
+                        </li>
+                    </ul>
+                    
+                    
                     {% else %}
                     <li class="nav-item">
                         <a class="btn btn-outline-light" href="{% url 'login' %}">Iniciar Sesión</a>
